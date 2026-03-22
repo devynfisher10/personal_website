@@ -1,12 +1,13 @@
 ---
 interface Props {
   title: string;
-  synopsis: string;
+  synopsis?: string;
   coverSrc?: string;
   amazonUrl?: string;
 }
 
 const { title, synopsis, coverSrc, amazonUrl } = Astro.props;
+const hasSlot = Astro.slots.has("default");
 ---
 
 <article class="flex flex-col sm:flex-row gap-6 border border-gold/20 rounded-sm bg-cream/50 p-6 hover:border-gold/40 transition-colors">
@@ -24,7 +25,11 @@ const { title, synopsis, coverSrc, amazonUrl } = Astro.props;
   )}
   <div class="flex-1">
     <h3 class="font-heading text-xl text-burgundy font-semibold mb-3">{title}</h3>
-    <p class="text-charcoal/70 text-sm leading-relaxed mb-4 drop-cap">{synopsis}</p>
+    {hasSlot ? (
+      <div class="text-charcoal/70 text-sm leading-relaxed mb-4 drop-cap"><slot /></div>
+    ) : synopsis ? (
+      <p class="text-charcoal/70 text-sm leading-relaxed mb-4 drop-cap">{synopsis}</p>
+    ) : null}
     {amazonUrl && (
       <a
         href={amazonUrl}

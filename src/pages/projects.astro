@@ -6,51 +6,39 @@ import Divider from "../components/Divider.astro";
 
 <ChapterLayout title="Projects" chapter="Chapter III">
   <p class="drop-cap text-charcoal/80 leading-relaxed mb-10">
-    Building things is how I learn. Whether it's a full-stack application, a data pipeline, or a creative experiment, each project is a chance to solve a problem I care about. Here are some of the things I've made.
+    Here are some projects that I've worked on over the years. For the record, these projects were all completed before the generative AI era.
   </p>
 
   <div class="grid gap-6 md:grid-cols-2">
     <ProjectCard
-      title="CalebCity GIF Extractor"
-      description="Extracts reaction GIFs from YouTube videos using face detection, audio spike analysis, and scene change detection, then labels them with sentiment for searchable retrieval."
-      tags={["Python", "Computer Vision", "NLP", "DeepFace"]}
-      href="https://github.com/devynfisher"
+      title="Cronus"
+      description="A reinforcement learning bot for Rocket League, trained to compete in aerial mechanics, positioning, and game sense through self-play."
+      tags={["Python", "Reinforcement Learning"]}
+      href="https://github.com/devynfisher10/Cronus"
     />
     <ProjectCard
-      title="Spotify Playlist Generator"
-      description="Automatically generates collaborative playlists between friend groups by analyzing each user's existing playlists to determine shared song interest."
-      tags={["Node.js", "Spotify API", "Full Stack"]}
-      href="https://github.com/devynfisher"
+      title="Europa"
+      description="An earlier-generation Rocket League RL bot exploring different reward shaping and training strategies for competitive play."
+      tags={["Python", "Reinforcement Learning"]}
+      href="https://github.com/devynfisher10/Europa"
     />
     <ProjectCard
-      title="IMDB Similarity Engine"
-      description="Uses Universal Sentence Encoder to compute similarity scores between 1000+ TV shows based on ratings, descriptions, and other features. Deployed with Streamlit."
-      tags={["Python", "Streamlit", "TensorFlow", "NLP"]}
-      href="https://github.com/devynfisher"
+      title="Show Engine"
+      description="Uses Universal Sentence Encoder to compute similarity scores between 1,000+ TV shows based on IMDB ratings, descriptions, and other features. Deployed with Streamlit."
+      tags={["Python", "TensorFlow", "NLP", "Streamlit"]}
+      href="https://github.com/devynfisher10/Show-Engine"
     />
     <ProjectCard
-      title="Writing Tracker"
-      description="Streamlit dashboard that tracks Google Docs writing activity with a GitHub-style contribution calendar, document progress trends, and word count target projections."
-      tags={["Python", "Streamlit", "Google API"]}
-      href="https://github.com/devynfisher"
-    />
-    <ProjectCard
-      title="Gym Progress Tracker"
-      description="Interactive dashboard to visualize gym progress with monthly attendance, exercise trends, volume analysis, and AI-powered next-month predictions."
-      tags={["Python", "Streamlit", "Plotly", "Pandas"]}
-      href="https://github.com/devynfisher"
-    />
-    <ProjectCard
-      title="Calcium Imaging Analysis"
-      description="Neuroscience data pipeline for processing calcium imaging data from mouse brain recordings using the CaImAn framework."
-      tags={["Python", "Neuroscience", "CaImAn"]}
-      href="https://github.com/devynfisher"
+      title="Playlist Generator"
+      description="Automatically generates collaborative playlists between friend groups by analyzing each user's existing Spotify playlists to determine shared song interest."
+      tags={["JavaScript", "Spotify API"]}
+      href="https://github.com/devynfisher10/playlist-generator"
     />
   </div>
 
   <Divider class="mt-10" />
 
   <p class="text-center text-charcoal/50 font-heading italic text-sm mt-4">
-    Always building. Check GitHub for the latest.
+    Check <a href="https://github.com/devynfisher10" target="_blank" rel="noopener noreferrer" class="underline hover:text-burgundy transition-colors">GitHub</a> for the details.
   </p>
 </ChapterLayout>
