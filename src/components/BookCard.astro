@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  synopsis: string;
+  coverSrc?: string;
+  amazonUrl?: string;
+}
+
+const { title, synopsis, coverSrc, amazonUrl } = Astro.props;
+---
+
+<article class="flex flex-col sm:flex-row gap-6 border border-gold/20 rounded-sm bg-cream/50 p-6 hover:border-gold/40 transition-colors">
+  {coverSrc && (
+    <div class="shrink-0 self-center sm:self-start">
+      <div class="w-36 h-52 border-2 border-gold/30 shadow-md overflow-hidden rounded-sm">
+        <img
+          src={coverSrc}
+          alt={`Cover of ${title}`}
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  )}
+  <div class="flex-1">
+    <h3 class="font-heading text-xl text-burgundy font-semibold mb-3">{title}</h3>
+    <p class="text-charcoal/70 text-sm leading-relaxed mb-4 drop-cap">{synopsis}</p>
+    {amazonUrl && (
+      <a
+        href={amazonUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block font-heading text-sm tracking-wide bg-burgundy text-cream px-5 py-2 rounded-sm hover:bg-burgundy/90 transition-colors"
+      >
+        Buy Now &rarr;
+      </a>
+    )}
+  </div>
+</article>

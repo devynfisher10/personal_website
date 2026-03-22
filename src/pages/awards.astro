@@ -1,0 +1,51 @@
+---
+import ChapterLayout from "../layouts/ChapterLayout.astro";
+import Divider from "../components/Divider.astro";
+
+const awards = [
+  {
+    year: "2025",
+    title: "Placeholder Award",
+    description: "Description of this recognition and what it meant to you.",
+  },
+  {
+    year: "2024",
+    title: "Placeholder Honor",
+    description: "Details about this accomplishment and the work behind it.",
+  },
+  {
+    year: "2023",
+    title: "Placeholder Recognition",
+    description: "Context for this milestone and why it mattered.",
+  },
+];
+---
+
+<ChapterLayout title="Awards" chapter="Chapter IV">
+  <p class="drop-cap text-charcoal/80 leading-relaxed mb-10">
+    Every milestone is a chapter marker — a reminder of how far the story has come. These are the recognitions that have shaped my journey and fueled the next page.
+  </p>
+
+  <ol class="relative border-l border-gold/30 ml-4">
+    {awards.map(({ year, title, description }, i) => (
+      <li class:list={["mb-10 ml-8", i === awards.length - 1 && "mb-0"]}>
+        <div class="absolute -left-2.5 w-5 h-5 border-2 border-gold bg-parchment rounded-full" />
+        <time class="block font-heading text-gold text-sm tracking-widest mb-1">
+          {year}
+        </time>
+        <h3 class="font-heading text-xl text-burgundy font-semibold mb-1">
+          {title}
+        </h3>
+        <p class="text-charcoal/70 text-sm leading-relaxed">
+          {description}
+        </p>
+      </li>
+    ))}
+  </ol>
+
+  <Divider class="mt-12" />
+
+  <p class="text-center text-charcoal/50 font-heading italic text-sm mt-4">
+    The story continues. New chapters are being written.
+  </p>
+</ChapterLayout>

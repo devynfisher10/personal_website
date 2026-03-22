@@ -1,0 +1,33 @@
+---
+import ChapterLayout from "../layouts/ChapterLayout.astro";
+import BookCard from "../components/BookCard.astro";
+import Divider from "../components/Divider.astro";
+---
+
+<ChapterLayout title="Novels" chapter="Chapter II">
+  <p class="drop-cap text-charcoal/80 leading-relaxed mb-10">
+    Stories have always been my way of making sense of the world. Each novel is a door into a place I've spent years imagining — full of characters who feel like old friends and conflicts that keep me awake at night. Here are the worlds I've built so far.
+  </p>
+
+  <div class="space-y-8">
+    <BookCard
+      title="The First Chronicle"
+      synopsis="In a kingdom where memory is currency and forgetting is a crime, a young archivist discovers a gap in the royal ledger that could unravel everything. A sweeping fantasy of power, identity, and the stories we tell ourselves to survive."
+      amazonUrl="#"
+    />
+
+    <Divider />
+
+    <BookCard
+      title="Ember and Ash"
+      synopsis="Two rival fire-keepers must join forces when an ancient darkness threatens to extinguish the last flame in their dying world. A tale of trust, sacrifice, and the spark that refuses to go out."
+      amazonUrl="#"
+    />
+  </div>
+
+  <Divider class="mt-10" />
+
+  <p class="text-center text-charcoal/50 font-heading italic text-sm mt-4">
+    More stories are on their way. The ink is still wet.
+  </p>
+</ChapterLayout>

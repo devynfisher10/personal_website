@@ -1,0 +1,51 @@
+---
+import ChapterLayout from "../layouts/ChapterLayout.astro";
+import Divider from "../components/Divider.astro";
+---
+
+<ChapterLayout title="About" chapter="Chapter I">
+  <div class="flex flex-col md:flex-row gap-10 items-start mb-12">
+    <!-- Profile photo with decorative frame -->
+    <div class="shrink-0 mx-auto md:mx-0">
+      <div class="w-52 h-52 border-2 border-gold/40 rounded-sm p-1.5 shadow-lg">
+        <div class="w-full h-full bg-parchment-dark rounded-sm flex items-center justify-center">
+          <span class="font-heading text-gold/40 text-6xl">DF</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="drop-cap text-charcoal/80 leading-relaxed mb-4">
+        Devyn Fisher is a novelist and software engineer whose work lives at the intersection of storytelling and technology. With a passion for world-building — both fictional and digital — Devyn brings the same rigor and creativity to crafting fantasy epics as to architecting elegant software systems.
+      </p>
+      <p class="text-charcoal/80 leading-relaxed">
+        When not writing or coding, you'll find Devyn exploring new ideas, reading voraciously, and searching for the next great adventure — in pages or in life.
+      </p>
+    </div>
+  </div>
+
+  <Divider />
+
+  <!-- Highlights callout -->
+  <div class="mt-8 border border-gold/20 rounded-sm bg-cream/50 p-6">
+    <h2 class="font-heading text-xl text-burgundy font-semibold mb-4">At a Glance</h2>
+    <ul class="space-y-2 text-charcoal/70 text-sm">
+      <li class="flex items-baseline gap-3">
+        <span class="text-gold">&bull;</span>
+        <span>Published fantasy novelist</span>
+      </li>
+      <li class="flex items-baseline gap-3">
+        <span class="text-gold">&bull;</span>
+        <span>Software engineer and creative technologist</span>
+      </li>
+      <li class="flex items-baseline gap-3">
+        <span class="text-gold">&bull;</span>
+        <span>Lifelong reader, thinker, and builder</span>
+      </li>
+      <li class="flex items-baseline gap-3">
+        <span class="text-gold">&bull;</span>
+        <span>Passionate about the craft of storytelling</span>
+      </li>
+    </ul>
+  </div>
+</ChapterLayout>

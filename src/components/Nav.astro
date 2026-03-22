@@ -1,0 +1,83 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: "/", label: "Title Page" },
+  { href: "/about", label: "I. About" },
+  { href: "/novels", label: "II. Novels" },
+  { href: "/projects", label: "III. Projects" },
+  { href: "/awards", label: "IV. Awards" },
+];
+---
+
+<nav aria-label="Main navigation" class="border-b border-gold/30 bg-parchment/90 backdrop-blur-sm sticky top-0 z-50">
+  <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-heading text-2xl font-bold text-burgundy hover:text-gold transition-colors">
+      DF
+    </a>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden text-charcoal hover:text-burgundy transition-colors"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <ul class="hidden md:flex items-center gap-8">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              "font-heading text-lg transition-colors hover:text-burgundy",
+              currentPath === href || (href !== "/" && currentPath.startsWith(href))
+                ? "text-burgundy font-semibold"
+                : "text-charcoal/70",
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <ul
+    id="mobile-menu"
+    class="md:hidden hidden border-t border-gold/20 px-6 pb-4"
+  >
+    {links.map(({ href, label }) => (
+      <li>
+        <a
+          href={href}
+          class:list={[
+            "block py-2 font-heading text-lg transition-colors hover:text-burgundy",
+            currentPath === href || (href !== "/" && currentPath.startsWith(href))
+              ? "text-burgundy font-semibold"
+              : "text-charcoal/70",
+          ]}
+        >
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>

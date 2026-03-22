@@ -1,17 +1,36 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Divider from "../components/Divider.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Devyn Fisher">
+  <section class="max-w-3xl mx-auto px-6 py-24 md:py-36 text-center animate-reveal">
+    <!-- Decorative bookplate frame -->
+    <div class="border-2 border-gold/30 rounded-sm p-10 md:p-16 relative">
+      <div class="absolute inset-2 border border-gold/15 rounded-sm pointer-events-none" aria-hidden="true" />
+
+      <p class="font-heading text-gold tracking-[0.4em] uppercase text-xs mb-6">
+        The Collected Works of
+      </p>
+
+      <h1 class="font-heading text-5xl md:text-7xl text-burgundy font-bold leading-tight mb-4">
+        Devyn Fisher
+      </h1>
+
+      <p class="font-heading text-lg md:text-xl text-charcoal/60 italic max-w-md mx-auto">
+        Novelist, builder, and relentless thinker
+      </p>
+    </div>
+
+    <Divider class="my-16" />
+
+    <TableOfContents />
+
+    <Divider class="my-16" />
+
+    <p class="font-heading text-charcoal/40 text-sm tracking-wide italic">
+      "Every great story begins with a single page."
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+const chapters = [
+  {
+    number: "I",
+    title: "About",
+    href: "/about",
+    description: "The author's origin story and guiding philosophies",
+  },
+  {
+    number: "II",
+    title: "Novels",
+    href: "/novels",
+    description: "Published works of fiction and worlds yet unwritten",
+  },
+  {
+    number: "III",
+    title: "Projects",
+    href: "/projects",
+    description: "Technical endeavors and creative experiments",
+  },
+  {
+    number: "IV",
+    title: "Awards",
+    href: "/awards",
+    description: "Honors, recognitions, and milestones",
+  },
+];
+---
+
+<div class="max-w-lg mx-auto">
+  <h2 class="font-heading text-2xl text-burgundy text-center mb-8 tracking-widest uppercase">
+    Table of Contents
+  </h2>
+  <ol class="space-y-6">
+    {chapters.map(({ number, title, href, description }) => (
+      <li>
+        <a
+          href={href}
+          class="group flex items-baseline gap-4 py-2 transition-colors hover:text-burgundy"
+        >
+          <span class="font-heading text-gold text-xl font-semibold shrink-0">
+            {number}.
+          </span>
+          <span class="flex-1">
+            <span class="font-heading text-xl group-hover:text-burgundy transition-colors">
+              {title}
+            </span>
+            <span class="block text-sm text-charcoal/50 mt-0.5 leading-relaxed">
+              {description}
+            </span>
+          </span>
+          <span class="border-b border-dotted border-charcoal/20 flex-1 min-w-8 mb-1.5" />
+          <span class="font-heading text-charcoal/30 text-sm group-hover:text-burgundy transition-colors">
+            &rarr;
+          </span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</div>

@@ -1,0 +1,29 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Divider from "../components/Divider.astro";
+
+interface Props {
+  title: string;
+  chapter: string;
+  description?: string;
+}
+
+const { title, chapter, description } = Astro.props;
+---
+
+<BaseLayout title={`${chapter} — ${title}`} description={description}>
+  <article class="max-w-3xl mx-auto px-6 py-16 animate-reveal">
+    <header class="text-center mb-12">
+      <p class="font-heading text-gold tracking-[0.3em] uppercase text-sm mb-2">
+        {chapter}
+      </p>
+      <h1 class="font-heading text-4xl md:text-5xl text-burgundy font-bold">
+        {title}
+      </h1>
+    </header>
+    <Divider />
+    <div>
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
